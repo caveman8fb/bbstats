@@ -3,6 +3,7 @@ from pprint import pprint
 from datetime import date
 from prettytable import PrettyTable
 import warnings
+import json
 
 
 def get_info_mlb_players():
@@ -305,7 +306,10 @@ if __name__ == "__main__":
         id = t[1]
         card_info = get_card_info(card_no, id, players, raw=False, show=True)
         cards.append(card_info)
+        print(' ')
+    ofh = open("cards.json", "w")
+    ofh.write(str(json.dumps(cards, indent=4)))
+    ofh.close()
 
-    print(cards)
     
     

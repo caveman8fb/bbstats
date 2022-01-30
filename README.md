@@ -1,7 +1,7 @@
 # bbstats
 Test Python Project for getting stats for baseball cards
 
-## Running the example (2 players)
+## Running the example (2 players) to cards.json
 ```
 # create Venv
 python3 -m venv venv
@@ -123,10 +123,12 @@ print(cards)
 Blank images inlcuded for future use with Pillow, PIL, ImageMagick, etc.
 
 # TODO:
+- Add ArgParse options
 - Refactor code
 - Store data (pickle, sqlite, other db, etc.)
-- Get Team Info
+- Get Current Team Info
   - Team Colors
+  - Team Logos
 - Locate and Pull Player Photos (bing_image_downloader?)
 - Add Photo Generator for card sides (Pillow?)
 - Add Web Front-End for easy viewing (Flask?)

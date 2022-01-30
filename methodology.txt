@@ -1,0 +1,19 @@
+Get the list of MLB Players
+	Flatten dictionary to only desired info
+	Transform dates into traditional M/D/YYYY format used by old cards
+	Transform City, State, Country into a single field for ease of use on the card
+
+Optional: Filter list for players by specific team(s)
+
+Get Card info by player
+	Search for player info by id from list of players
+	If a pitcher: get stats for pitching
+	Else: get stats for hitting
+	Return Card Info: {Player Info, Seasonal Stats, Career Stats}
+
+Future: Generate Image
+	Get Team Colors
+	Get Team Logos
+	Get Player Photo
+	Create Card Front using Team Colors, Main Logo, Player Photo, Player Name, Player Position, Front Image Blank
+	Create Card Back using Team Colors, Secondary Logo, Player Name, Player Position, Player Info, Player Stats, Back Image Blank
