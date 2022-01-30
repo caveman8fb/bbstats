@@ -9,7 +9,7 @@ python3.8 -m venv venv
 source venv/bin/activate
 # install requirements
 python -m pip install -r requirements.txt
-python getstats.py
+python get_stats.py
 ```
 
 
