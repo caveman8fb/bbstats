@@ -296,7 +296,7 @@ def get_card_info(card_no, id, players, raw=False, show=False):
 if __name__ == "__main__":
     BASE_URL = 'https://statsapi.mlb.com/api/v1/'
     team_id = 139 # Tampa Bay Rays
-    #players = get_players_by_team_id(team_id)
+    players = get_players_by_team_id(team_id)
 
     cards = []
     example_players = [(1, 595281), (2, 656876)]
