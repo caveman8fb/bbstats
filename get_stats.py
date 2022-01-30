@@ -2,6 +2,7 @@ import requests
 from pprint import pprint
 from datetime import date
 from prettytable import PrettyTable
+import warnings
 
 
 def get_info_mlb_players():
@@ -286,7 +287,7 @@ def get_card_info(card_no, id, players, raw=False, show=False):
         card_info['season_stats'] = clean_mlb_stats
         card_info['career_stats'] = clean_career_stats
 
-    if print:
+    if show:
         print_rear_text(player_info)
         print_stats_table(clean_mlb_stats, clean_career_stats)
     return card_info
@@ -295,7 +296,7 @@ def get_card_info(card_no, id, players, raw=False, show=False):
 if __name__ == "__main__":
     BASE_URL = 'https://statsapi.mlb.com/api/v1/'
     team_id = 139 # Tampa Bay Rays
-    players = get_players_by_team_id(team_id)
+    #players = get_players_by_team_id(team_id)
 
     cards = []
     example_players = [(1, 595281), (2, 656876)]
@@ -304,6 +305,7 @@ if __name__ == "__main__":
         id = t[1]
         card_info = get_card_info(card_no, id, players, raw=False, show=True)
         cards.append(card_info)
+
     print(cards)
     
     
