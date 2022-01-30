@@ -5,7 +5,7 @@ Test Python Project for getting stats for baseball cards
 ## Running the example (2 players) to cards.json
 ```
 # create Venv
-python3 -m venv venv
+python3.8 -m venv venv
 source venv/bin/activate
 # install requirements
 python -m pip install -r requirements.txt
