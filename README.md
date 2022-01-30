@@ -1,5 +1,6 @@
 # bbstats
 Test Python Project for getting stats for baseball cards
+**Works with Python 3.8+**
 
 ## Running the example (2 players) to cards.json
 ```
