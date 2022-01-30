@@ -79,7 +79,6 @@ def get_players_multiple_teams(teams):
 
 
 def get_player_stats(id, stat_type):
-    print(stat_type)
     if stat_type not in ['hitting', 'pitching']:
         raise ValueError('Invalid Type provided')
     api_endpoint = 'people/{}'.format(id)
@@ -103,6 +102,7 @@ def only_mlb_stats(stats):
             mlb_stats.append(s)
     return mlb_stats
 
+
 def team_name(stat):
     team = ''
     if 'team' in stat:
@@ -110,6 +110,7 @@ def team_name(stat):
     else:
         team = 'MLB'
     return team
+
 
 def cleanup_stats(stats, stat_type):
     if stat_type == 'pitching':
@@ -170,11 +171,13 @@ def cleanup_batting_stats(stats):
             clean_stats.append(sstats)
     return clean_stats
 
+
 def career_to_array(stats, stat_type):
     if stat_type == 'pitching':
         return career_pitching_to_array(stats)
     else:
         return career_batting_to_array(stats)
+
 
 def career_pitching_to_array(s):
     # Create an array with the career totals
@@ -192,6 +195,7 @@ def career_pitching_to_array(s):
             s['stat']['era']
         ]
     return career_stats    
+
 
 def career_batting_to_array(s):
     # Create an array with the career totals
@@ -269,11 +273,11 @@ def get_card_info(card_no, id, players, raw=False, show=False):
         stat_type = 'pitching'
 
     mlb_stats, career_stats = player_stats(id, stat_type)
-    
     clean_career_stats = career_to_array(career_stats, stat_type)
     clean_mlb_stats = cleanup_stats(mlb_stats, stat_type)
     card_info = {'card': card_no}
     card_info['player_info'] = player_info
+
     # Include raw or cleaned/flattened stat data
     if raw:
         card_info['season_stats'] = mlb_stats
@@ -287,7 +291,6 @@ def get_card_info(card_no, id, players, raw=False, show=False):
         print_stats_table(clean_mlb_stats, clean_career_stats)
     return card_info
     
-
 
 if __name__ == "__main__":
     BASE_URL = 'https://statsapi.mlb.com/api/v1/'
